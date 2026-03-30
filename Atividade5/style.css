@@ -1,0 +1,52 @@
+#box {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* ---- até 420px ---- */
+@media (max-width: 420px) {
+    #box { background: gray; }
+    #texto::after { content: "Cinza"; }
+}
+
+/* ---- 421 até 768px ---- */
+@media (min-width: 421px) and (max-width: 768px) {
+    #box { background: orange; }
+    #texto::after { content: "Laranja"; }
+}
+
+/* ---- 769 até 1024px ---- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #box { background: hotpink; }
+    #texto::after { content: "Rosa"; }
+}
+
+/* ---- 1025 até 1080px ---- */
+@media (min-width: 1025px) and (max-width: 1080px) {
+    #box { background: purple; }
+    #texto::after { content: "Roxo"; }
+}
+
+/* ---- 1081 até 1366px ---- */
+@media (min-width: 1081px) and (max-width: 1366px) {
+    #box { background: blue; }
+    #texto::after { content: "Azul"; }
+}
+
+/* ---- 1367 até 1920px ---- */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    #box { background: gold; color: black; }
+    #texto::after { content: "Amarelo"; }
+}
+
+/* ---- maior que 1920px ---- */
+@media (min-width: 1921px) {
+    #box { background: green; }
+    #texto::after { content: "Verde"; }
+}
