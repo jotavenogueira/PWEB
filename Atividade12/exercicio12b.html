@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Contas Bancárias</title>
+</head>
+<body>
+    <h2>Exercício 2 - Classes Conta, Corrente e Poupança</h2>
+
+    <script>
+        class Conta {
+            constructor(nome, correntista, banco, numeroConta, saldo) {
+                this._nome = nome;
+                this._correntista = correntista;
+                this._banco = banco;
+                this._numeroConta = numeroConta;
+                this._saldo = saldo;
+            }
+
+            get nome() { return this._nome; }
+            set nome(valor) { this._nome = valor; }
+
+            get correntista() { return this._correntista; }
+            set correntista(valor) { this._correntista = valor; }
+
+            get banco() { return this._banco; }
+            set banco(valor) { this._banco = valor; }
+
+            get numeroConta() { return this._numeroConta; }
+            set numeroConta(valor) { this._numeroConta = valor; }
+
+            get saldo() { return this._saldo; }
+            set saldo(valor) { this._saldo = valor; }
+        }
+
+        class Corrente extends Conta {
+            constructor(nome, correntista, banco, numeroConta, saldo, saldoEspecial) {
+                super(nome, correntista, banco, numeroConta, saldo);
+                this._saldoEspecial = saldoEspecial;
+            }
+
+            get saldoEspecial() { return this._saldoEspecial; }
+            set saldoEspecial(valor) { this._saldoEspecial = valor; }
+        }
+
+        class Poupanca extends Conta {
+            constructor(nome, correntista, banco, numeroConta, saldo, juros, dataVencimento) {
+                super(nome, correntista, banco, numeroConta, saldo);
+                this._juros = juros;
+                this._dataVencimento = dataVencimento;
+            }
+
+            get juros() { return this._juros; }
+            set juros(valor) { this._juros = valor; }
+
+            get dataVencimento() { return this._dataVencimento; }
+            set dataVencimento(valor) { this._dataVencimento = valor; }
+        }
+
+        // Objetos criados
+        const contaCorrente = new Corrente(
+            "Conta Corrente",
+            "João Vitor",
+            "Banco XPTO",
+            "12345-6",
+            1500,
+            500
+        );
+
+        const contaPoupanca = new Poupanca(
+            "Conta Poupança",
+            "Maria Silva",
+            "Banco XPTO",
+            "98765-4",
+            3000,
+            0.05,
+            "10/12/2026"
+        );
+
+        document.write("<h3>===== Conta Corrente =====</h3>");
+        document.write("Nome: " + contaCorrente.nome + "<br>");
+        document.write("Correntista: " + contaCorrente.correntista + "<br>");
+        document.write("Banco: " + contaCorrente.banco + "<br>");
+        document.write("Número da Conta: " + contaCorrente.numeroConta + "<br>");
+        document.write("Saldo: " + contaCorrente.saldo + "<br>");
+        document.write("Saldo Especial: " + contaCorrente.saldoEspecial + "<br>");
+
+        document.write("<h3>===== Conta Poupança =====</h3>");
+        document.write("Nome: " + contaPoupanca.nome + "<br>");
+        document.write("Correntista: " + contaPoupanca.correntista + "<br>");
+        document.write("Banco: " + contaPoupanca.banco + "<br>");
+        document.write("Número da Conta: " + contaPoupanca.numeroConta + "<br>");
+        document.write("Saldo: " + contaPoupanca.saldo + "<br>");
+        document.write("Juros: " + contaPoupanca.juros + "<br>");
+        document.write("Data de Vencimento: " + contaPoupanca.dataVencimento + "<br>");
+    </script>
+</body>
+</html>

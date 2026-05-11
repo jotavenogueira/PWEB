@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1 - Retângulo</title>
+</head>
+<body>
+    <h2>Exercício 1 - Retângulo</h2>
+
+    <script>
+        function Retangulo(base, altura) {
+            this.base = base;
+            this.altura = altura;
+
+            this.calcularArea = function () {
+                return this.base * this.altura;
+            };
+        }
+
+        const base = parseFloat(prompt("Digite a base do retângulo: "));
+        const altura = parseFloat(prompt("Digite a altura do retângulo: "));
+
+        const ret = new Retangulo(base, altura);
+
+        document.write("<h3>Área do retângulo: " + ret.calcularArea() + "</h3>");
+    </script>
+</body>
+</html>
